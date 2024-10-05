@@ -1,6 +1,8 @@
-tensorflow
+tensorflow==2.15.0
 pickle
 pandas
 numpy
-scikit-leran
-steamlit
+scikit-learn
+streamlit
+tensorboard
+matplotlib
