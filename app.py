@@ -30,16 +30,8 @@ credit_score = st.number_input('Credit Score')
 estimated_salary = st.number_input('Estimated Salary')
 tenure = st.slider('Tenure', 0, 10)
 num_of_products = st.slider('Number of Products', 1, 4)
-has_cr_card = st.selectbox('Has Credit Card', options=[
-    ('0', 'No'), 
-    ('1', 'Yes')
-], format_func=lambda x: x[1])  # Using a lambda function to display 'No' or 'Yes'
-
-# More descriptive options for active membership status
-is_active_member = st.selectbox('Is Active Member', options=[
-    ('0', 'No'),
-    ('1', 'Yes')
-], format_func=lambda x: x[1])  # Using a lambda function to display 'No' or 'Yes'
+has_cr_card = st.selectbox('Has Credit Card', [0, 1])
+is_active_member = st.selectbox('Is Active Member', [0, 1])
 
 # Prepare the input data
 input_data = pd.DataFrame({
