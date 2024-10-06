@@ -50,17 +50,19 @@ input_data = pd.DataFrame({
 encode_geo = OneHotEncoder_Geography.transform([[geography]]).toarray()
 geo_encoder_df = pd.DataFrame(encode_geo, columns=OneHotEncoder_Geography.get_feature_names_out(['Geography']))
 
+#combine one hot encoded data with input data
 input_data = pd.concat([input_data.reset_index(drop=True), geo_encoder_df], axis=1)
 
+# scaling input data
 input_data_scale = scaler.transform(input_data)
-input_data_scale
 
+# predicting churn
 prediction = model.predict(input_data_scale)
-prediction
+prediction_proba = prediction[0][0]
 
-st.write(f'Churn Probability: {prediction_probability:.2f}')
+st.write(f"Churn Probability: {prediction_proba:.2f}")
 
-if prediction_probability > 0.5:
+if prediction_proba > 0.5:
   st.write("Customer is likely to churn.")
 else:
   st.write("Customer is not likely to churn.")
