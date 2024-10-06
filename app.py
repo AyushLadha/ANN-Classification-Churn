@@ -58,9 +58,6 @@ input_data_scale
 prediction = model.predict(input_data_scale)
 prediction
 
-prediction_probability = prediction[0][0]
-prediction_probability 
-
 st.write(f'Churn Probability: {prediction_probability:.2f}')
 
 if prediction_probability > 0.5:
