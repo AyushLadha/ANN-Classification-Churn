@@ -1,8 +1,8 @@
+pip=24.2
 tensorflow==2.17.0
-pickle
 pandas
 numpy
 scikit-learn
-streamlit
+streamlit=1.39.0
 tensorboard
 matplotlib
